@@ -132,12 +132,14 @@ int main()
                 }
             }
             //fDistance - расснояние до стены для одного луча
+
             int nCeiling = (float)(nScreenHeight / 2.0f + fPlayerHeight) - nScreenHeight / ((float)fDistance);
             int nFloor = (float)(nScreenHeight / 2.0f + fPlayerHeight) + nScreenHeight / ((float)fDistance);
             int nObjFloor = (float)(nScreenHeight / 2.0f + fPlayerHeight) + nScreenHeight / ((float)fObjDistance);
             int nObjCeiling = (float)(nScreenHeight / 2.0f + fPlayerHeight) - nScreenHeight / ((float)fObjDistance) + (fObjHeight+nScreenHeight)/((float)fObjDistance);
             
             short nPixel, nPixelObj;
+            //Текстура стены
             if (fDistance <= fLookRange / 2.5f)        nPixel = 0x2588;  
             else if (fDistance < fLookRange / 2.0f)    nPixel = 0x2593;
             else if (fDistance < fLookRange / 1.5f)    nPixel = 0x2592;
@@ -145,7 +147,7 @@ int main()
             else                                       nPixel = ' ';
 
             
-
+            //Текстура объекта
             if (fObjDistance <= fLookRange / 2.5f)        nPixelObj = 0x2587;
             else if (fObjDistance < fLookRange / 2.0f)    nPixelObj = 0x2586;
             else if (fObjDistance < fLookRange / 1.5f)    nPixelObj = 0x2585;
